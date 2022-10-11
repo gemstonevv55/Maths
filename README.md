@@ -1,1 +1,3 @@
-# Maths
+# Python
+# Useful
+# Easy to understand
