@@ -1,0 +1,65 @@
+import random
+
+class Maths:
+
+    @staticmethod
+    def table(a):
+        print(a*0,a*1,a*2,a*3,a*4,a*5,a*6,a*7,a*8,a*9,a*10,sep='\n')
+ 
+    @staticmethod
+    def add(*a):
+        s=0
+        for i in a:
+            s=s+i
+        return s
+ 
+    @staticmethod
+    def multiply(*a):
+        p=1
+        for i in a:
+            p=p*i
+        return p
+
+    @staticmethod
+    def percent(x,t):
+        return x*100/t
+
+    @staticmethod
+    def roll(x=1):
+        l=[]
+        for i in range(x):
+            r=random.randint(1,6)
+            l.append(r)
+        return tuple(l)
+
+    @staticmethod
+    def addArray(l1,l2):
+        l1=[str(i) for i in l1]
+        l1=int("".join(l1))
+        l2=[str(j) for j in l2]
+        l2=int("".join(l2))
+        return l1+l2
+
+    @staticmethod
+    def LCM2(a,b):
+        l1=[a*i for i in range(1,max(a,b)+1)] 
+        l2=[b*i for i in range(1,max(a,b)+1)] 
+        for x in l1:
+            if l2.count(x)==1:
+                return x 
+                break 
+            
+    @staticmethod
+    def HCF2(a,b):
+        return int((a*b)/Maths.LCM2(a,b))
+
+    @staticmethod
+    def mergeArray(*x:list[int]) ->list:
+        y=[]
+        for i in x:
+            y.extend(i)
+        return y
+
+    @staticmethod
+    def avrg(*x):
+        return Maths.add(*x)/len(x)
